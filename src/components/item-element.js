@@ -1,6 +1,12 @@
 import {LitElement, html} from "lit-element";
 
-class ItemElement extends LitElement {
+/**
+ * Calse que define el elemento hijo.
+ */
+class ItemElement extends LitElement  {
+    /**
+     * Se definen las propiedades del elemento.
+     */
     static get properties() {
         return {
             todoList: { type: Array },
@@ -8,11 +14,20 @@ class ItemElement extends LitElement {
         }
     }
 
+    /**
+     * Se agrega el constructor del elemento.
+     * Todo lo que se defina aquí sera creado antes de que el elemento sea
+     * agregado al DOM.
+     */
     constructor() {
         super();
         this.todoItem = "";
     }
 
+    /**
+     * Función que toma el valor del input.
+     * @param {*} e 
+     */
     presionaTecla(e) {
         if(e.keyCode == 13) {
             this.presionaBoton();
@@ -21,6 +36,9 @@ class ItemElement extends LitElement {
         }
     }
 
+    /**
+     * Función que toma los datos del input y los almacena dentro del "Local Storage".
+     */
     presionaBoton() {
         if(this.todoItem.length > 0) {
             let listaAlmacenada = JSON.parse(localStorage.getItem("lista-todo"));
@@ -37,6 +55,9 @@ class ItemElement extends LitElement {
         }
     }
 
+    /**
+     * Se publica el contendio que tendrá el elemento "app-polymer".
+     */
     render() {
         return html`
         <div>
@@ -47,4 +68,7 @@ class ItemElement extends LitElement {
     }
 }
 
+/**
+ * Se define el elemento personalizado.
+ */
 customElements.define("item-element", ItemElement);
