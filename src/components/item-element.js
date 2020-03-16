@@ -11,29 +11,37 @@ class ItemElement extends LitElement {
     constructor() {
         super();
         this.todoItem = "";
-        this.addEventListener("keyup", this.presionaTecla);
-        this.addEventListener("click",  this.presionaBoton);
     }
 
     presionaTecla(e) {
         if(e.keyCode == 13) {
-            console.log("Te caché, presionaste enter!!");
+            this.presionaBoton();
         } else {
             this.todoItem = e.originalTarget.value;
         }
     }
 
     presionaBoton() {
-        console.log("Has presionado el boton.");
+        if(this.todoItem.length > 0) {
+            let listaAlmacenada = JSON.parse(localStorage.getItem("lista-todo"));
+            listaAlmacenada = listaAlmacenada === null ? [] : listaAlmacenada;
+    
+            listaAlmacenada.push({
+                id: new Date().valueOf(),
+                item: this.todoItem,
+                done: false
+            });
+    
+            localStorage.setItem("lista-todo", JSON.stringify(listaAlmacenada));
+            this.todoItem = "";
+        }
     }
 
     render() {
-        const props = this;
-
         return html`
         <div>
-            <input value="${props.todoItem}" keyup="${(e) => this.presionaTecla(e)}">
-            <button click="${() => props.presionaBoton}">Presioname</button>
+            <input value="${this.todoItem}" @keyup="${(e) => this.presionaTecla(e)}">
+            <button @click="${() => this.presionaBoton()}">Agrega Item</button>
         </div>
         `
     }
