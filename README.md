@@ -1,21 +1,39 @@
-# \<app-polymer\>
+# Página Ejemplo creada con Polymer
 
-Aplicación creada desde un elemento
+Esto es un ejemplo de una aplicación construida con [Polymer](https://www.polymer-project.org) [LitElement](https://lit-element.polymer-project.org).
 
-## Install the Polymer-CLI
+## Dependencias
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed. Run `npm install` to install your element's dependencies, then run `polymer serve` to serve your element locally.
+Para la construcción del proyecto se requiere de lo siguiente.
 
-## Viewing Your Element
+* [LitElement](https://lit-element.polymer-project.org).
+* [lit-html](https://lit-html.polymer-project.org).
+* [WEBCOMPONENTS](https://www.webcomponents.org).
+
+### Instalación de dependencias
+
+Los comandos que se presentan se deben ejecutar en el directorio en el cual se realizo el `git clone` al proyecto.
+
+#### LitElement
+
+La versión de `LitElement` que se usó para el proyecto es [_LitElement 2.3.1_](https://www.npmjs.com/package/lit-element).
 
 ```
-$ polymer serve
+$ npm i lit-element
 ```
 
-## Running Tests
+#### lit-html
+
+La versión de `lit-html` que se usó para el proyecto es [_lit-html 1.2.1_](https://www.npmjs.com/package/lit-html).
 
 ```
-$ polymer test
+$ npm i lit-html
 ```
 
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+#### Webcomponents
+
+Para los Webcomponents se uso el script de [_polyfills_](https://www.npmjs.com/package/@webcomponents/webcomponentsjs) en su versión 1.
+
+```
+$ npm i @webcomponents/webcomponentsjs
+```
