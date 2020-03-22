@@ -51,6 +51,13 @@ class ItemElement extends LitElement  {
             });
     
             localStorage.setItem("lista-todo", JSON.stringify(listaAlmacenada));
+            this.dispatchEvent(new CustomEvent("agergaItem", {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    elementHijo: listaAlmacenada
+                }
+            }));
             this.todoItem = "";
         }
     }

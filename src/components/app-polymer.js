@@ -27,6 +27,9 @@ class AppPolymer extends LitElement {
         this.todoList = lista === null ? [] : lista;
     }
     
+    firstUpdated() {
+        this.addEventListener("agergaItem", arg => this.todoList = arg.detail.elementHijo);
+    }
     /**
      * Se publica el contendio que tendrá el elemento "app-polymer".
      */
