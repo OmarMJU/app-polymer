@@ -27,11 +27,20 @@ class AppPolymer extends LitElement {
         this.todoList = lista === null ? [] : lista;
     }
     
+    /**
+     * Método de Polymer que detecta cuaando un cambio a ocurrido.
+     */
     firstUpdated() {
+        // Evento para agregar items y mostrarlos de forma dinámica.
         this.addEventListener("agergaItem", arg => this.todoList = arg.detail.elementHijo);
     }
+
     /**
      * Se publica el contendio que tendrá el elemento "app-polymer".
+     * Nota: Para pasar datos de propiedades a atributos o atributos a propedades
+     * es necesario convertirlos a tipo de dato "String", para este caso se está
+     * pasando un tipo de dato "Array" y para ello usamos JSON.stringfy.
+     * Para mejor referencia ver: https://20190108t174118-dot-polymer-lit-element.appspot.com/guide/properties
      */
     render() {
         return html`

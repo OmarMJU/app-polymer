@@ -51,6 +51,7 @@ class ItemElement extends LitElement  {
             });
     
             localStorage.setItem("lista-todo", JSON.stringify(listaAlmacenada));
+            
             this.dispatchEvent(new CustomEvent("agergaItem", {
                 bubbles: true,
                 composed: true,
@@ -64,6 +65,10 @@ class ItemElement extends LitElement  {
 
     /**
      * Se publica el contendio que tendrá el elemento "app-polymer".
+     * NOTA: Para aislar los veventos y que no afecten a todo el elemento
+     * es ne necesario agregar el operador "œ" para solo aplicar el evento
+     * al elemento que se requiere.
+     * Ejemplo: @keyup, @click, etc.
      */
     render() {
         return html`
