@@ -1,5 +1,6 @@
 import {LitElement, html} from "lit-element";
 import "./item-element"
+import "./list-elements"
 
 /**
  * Elemento base para la aplicación.
@@ -22,9 +23,10 @@ class AppPolymer extends LitElement {
      */
     constructor() {
         super();
-        this.todoList = [];
+        let lista = JSON.parse(localStorage.getItem("lista-todo"));
+        this.todoList = lista === null ? [] : lista;
     }
-
+    
     /**
      * Se publica el contendio que tendrá el elemento "app-polymer".
      */
@@ -32,6 +34,7 @@ class AppPolymer extends LitElement {
         return html`
         <h1>Hola mundo</h1>
         <item-element></item-element>
+        <list-elements todoList="${JSON.stringify(this.todoList)}"></list-elements>
         `;
     }
 }
