@@ -33,6 +33,14 @@ class AppPolymer extends LitElement {
     firstUpdated() {
         // Evento para agregar items y mostrarlos de forma dinámica.
         this.addEventListener("agergaItem", arg => this.todoList = arg.detail.elementHijo);
+
+        // Evento para eliminar items y quitarlos de la vista de forma dinámica.
+        this.addEventListener("eliminaElemento", arg2 => {
+            let indexElemento = this.todoList.map(ident => ident.id).indexOf(arg2.detail.elementoEl);  // Devuelve la posición del elemento del arreglo que coincida con el ID.
+            this.todoList.splice(indexElemento, 1);  // Elimina un elemento de la posición "indexElemento".
+            this.todoList = _.clone(this.todoList);  // Función de Lodash para actualizar el arreglo.
+            localStorage.setItem("lista-todo", JSON.stringify(this.todoList));
+        });
     }
 
     /**

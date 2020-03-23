@@ -24,11 +24,26 @@ class TodoElemento extends LitElement {
     }
 
     /**
+     * Función para eliminar los elementos del LocalStorage.
+     * @param {*} id 
+     */
+    borraElemento(id) {
+        this.dispatchEvent(new CustomEvent("eliminaElemento", {
+            bubbles: true,
+            composed: true,
+            detail: {
+                elementoEl: id
+            }
+        }));
+    }
+
+    /**
      * Se define el tipo de elemento.
      */
     render() {
         return html`
         <li>${this.elemento.item}</li>
+        <button @click="${() => this.borraElemento(this.elemento.id)}">x</button>
         `;
     }
 }
