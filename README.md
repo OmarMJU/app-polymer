@@ -9,6 +9,9 @@ Para la construcción del proyecto se requiere de lo siguiente.
 * [LitElement](https://lit-element.polymer-project.org).
 * [lit-html](https://lit-html.polymer-project.org).
 * [WEBCOMPONENTS](https://www.webcomponents.org).
+* [Lodash](https://lodash.com).
+
+> Todos los paquetes se instalaron mediante [npm](https://www.npmjs.com).
 
 ### Instalación de dependencias
 
@@ -36,4 +39,12 @@ Para los Webcomponents se uso el script de [_polyfills_](https://www.npmjs.com/p
 
 ```
 $ npm i @webcomponents/webcomponentsjs
+```
+
+#### Lodash
+
+[Lodash](https://www.npmjs.com/package/lodash) se utiliza para la actualización y modificación del tipo de dato `Àrray`, para este caso un array de objetos `[{}, {}, {}, ...]`.
+
+```
+$ npm i lodash
 ```
