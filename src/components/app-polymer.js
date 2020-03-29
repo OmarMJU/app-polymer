@@ -41,6 +41,13 @@ class AppPolymer extends LitElement {
             this.todoList = _.clone(this.todoList);  // Función de Lodash para actualizar el arreglo.
             localStorage.setItem("lista-todo", JSON.stringify(this.todoList));
         });
+        
+        // Evento para leer el estado checked del input tipo checkbox.
+        this.addEventListener("cambiaElemento", agr3 => {
+            let index = this.todoList.map(ident => ident.id).indexOf(agr3.detail.elementoEl);  // Devuelve la posición del elemento del arreglo que coincida con el ID.
+            this.todoList[index].bandera = !this.todoList[index].bandera;
+            localStorage.setItem("lista-todo", JSON.stringify(this.todoList));
+        });
     }
 
     /**

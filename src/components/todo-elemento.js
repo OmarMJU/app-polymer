@@ -38,12 +38,31 @@ class TodoElemento extends LitElement {
     }
 
     /**
+     * Revisa el cambio del checkbox.
+     * El estatus del checker funciona algo raro.
+     * Para más información ver: https://stackoverflow.com/questions/55962214/litelement-not-updating-checkbox-in-list
+     * @param {*} id 
+     */
+    cambBand(id) {
+        this.dispatchEvent(new CustomEvent("cambiaElemento", {
+            bubbles: true,
+            composed: true,
+            detail: {
+                elementoEl: id
+            }
+        }));
+    }
+
+    /**
      * Se define el tipo de elemento.
      */
     render() {
         return html`
-        <li>${this.elemento.item}</li>
-        <button @click="${() => this.borraElemento(this.elemento.id)}">x</button>
+        <li>
+            <input type="checkbox" .checked="${this.elemento.bandera}" @click="${() => this.cambBand(this.elemento.id)}" />
+            ${this.elemento.item}
+            <button @click="${() => this.borraElemento(this.elemento.id)}">x</button>
+        </li>
         `;
     }
 }

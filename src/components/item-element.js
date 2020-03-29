@@ -31,6 +31,7 @@ class ItemElement extends LitElement  {
     presionaTecla(e) {
         if(e.keyCode == 13) {
             this.presionaBoton();
+            e.originalTarget.value = "";
         } else {
             this.todoItem = e.originalTarget.value;
         }
@@ -47,7 +48,7 @@ class ItemElement extends LitElement  {
             listaAlmacenada.push({
                 id: new Date().valueOf(),
                 item: this.todoItem,
-                done: false
+                bandera: false
             });
     
             localStorage.setItem("lista-todo", JSON.stringify(listaAlmacenada));
@@ -59,6 +60,7 @@ class ItemElement extends LitElement  {
                     elementHijo: listaAlmacenada
                 }
             }));
+
             this.todoItem = "";
         }
     }
