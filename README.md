@@ -48,3 +48,5 @@ $ npm i @webcomponents/webcomponentsjs
 ```
 $ npm i lodash
 ```
+
+**Se sigue trabajando en esta app.**
