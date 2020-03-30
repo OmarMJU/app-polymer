@@ -31,6 +31,7 @@ class ItemElement extends LitElement  {
     presionaTecla(e) {
         if(e.keyCode == 13) {
             this.presionaBoton();
+            e.originalTarget.value = "";
         } else {
             this.todoItem = e.originalTarget.value;
         }
@@ -47,16 +48,29 @@ class ItemElement extends LitElement  {
             listaAlmacenada.push({
                 id: new Date().valueOf(),
                 item: this.todoItem,
-                done: false
+                bandera: false
             });
     
             localStorage.setItem("lista-todo", JSON.stringify(listaAlmacenada));
+            
+            this.dispatchEvent(new CustomEvent("agergaItem", {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    elementHijo: listaAlmacenada
+                }
+            }));
+
             this.todoItem = "";
         }
     }
 
     /**
      * Se publica el contendio que tendrá el elemento "app-polymer".
+     * NOTA: Para aislar los veventos y que no afecten a todo el elemento
+     * es ne necesario agregar el operador "œ" para solo aplicar el evento
+     * al elemento que se requiere.
+     * Ejemplo: @keyup, @click, etc.
      */
     render() {
         return html`

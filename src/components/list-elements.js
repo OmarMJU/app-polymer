@@ -1,4 +1,5 @@
 import {LitElement, html} from "lit-element";
+import "./todo-elemento";
 
 class ListaElementos extends LitElement  {
     /**
@@ -23,7 +24,7 @@ class ListaElementos extends LitElement  {
      */
     render() {
         return html`
-        <ul>${this.todoList.map(hijo => html`<li>${hijo.item}</li>`)}</ul>
+        <ul>${this.todoList.map(hijo => html`<todo-elemento elemento="${JSON.stringify(hijo)}"></todo-elemento>`)}</ul>
         `
     }
 }
