@@ -50,3 +50,5 @@ $ npm i lodash
 ```
 
 **Se sigue trabajando en esta app.**
+
+Esta no es la versión final de la app. Seguimos trabajando en ello.
