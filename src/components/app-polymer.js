@@ -1,4 +1,4 @@
-import {LitElement, html} from "lit-element";
+import {LitElement, html, css} from "lit-element";
 import "./item-element"
 import "./list-elements"
 
@@ -14,6 +14,11 @@ class AppPolymer extends LitElement {
         return {
             todoList: { type: Array }
         }
+    }
+
+    static get styles() {
+        return css`
+        `;
     }
 
     /**
@@ -59,7 +64,6 @@ class AppPolymer extends LitElement {
      */
     render() {
         return html`
-        <h1>Hola mundo</h1>
         <item-element></item-element>
         <list-elements todoList="${JSON.stringify(this.todoList)}"></list-elements>
         `;
