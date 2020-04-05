@@ -16,8 +16,23 @@ class AppPolymer extends LitElement {
         }
     }
 
+    /**
+     * Agrega los estilos CSS del elemento.
+     */
     static get styles() {
         return css`
+            .contenedor-app {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            item-element {
+                width: 20%;
+            }
+            
+            list-elements {
+                width: 80%;
+            }
         `;
     }
 
@@ -64,8 +79,10 @@ class AppPolymer extends LitElement {
      */
     render() {
         return html`
-        <item-element></item-element>
-        <list-elements todoList="${JSON.stringify(this.todoList)}"></list-elements>
+        <div class="contenedor-app">
+            <item-element></item-element>
+            <list-elements todoList="${JSON.stringify(this.todoList)}"></list-elements>
+        </div>
         `;
     }
 }
