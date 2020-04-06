@@ -43,6 +43,7 @@ class ItemElement extends LitElement  {
                 border-top-right-radius: 10px;
                 border-bottom: 0;
                 padding: 20px 0;
+                font-family: 'Gotu', sans-serif;
             }
             
             .container-inputs button {
@@ -52,6 +53,7 @@ class ItemElement extends LitElement  {
                 border-bottom-right-radius: 10px;
                 background-color: #ffffff;
                 color: #5EB2EA;
+                font-family: 'Montserrat', sans-serif;
             }
 
             .container-inputs button:hover {
