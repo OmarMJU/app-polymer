@@ -19,19 +19,36 @@ class TodoElemento extends LitElement {
             .lista-elemento {
                 list-style: none;
                 font-family: 'Abel', sans-serif;
-                border: 1px solid black;
+                border: 0;
                 margin: 10px 0;
                 padding: 5px 0;
                 border-radius: 5px;
+                background-color: #fff;
             }
-
+            
             .lista-elemento .contenedor-entradas-hijos {
                 display: flex;
                 justify-content: space-between;
             }
-
+            
             .lista-elemento .contenedor-entradas-hijos .etiqueta {
                 text-align: center;
+                margin: 0 10px;
+            }
+            
+            .lista-elemento .contenedor-entradas-hijos button {
+                border: 0;
+                background-color: #fff;
+                font-size: 11px;
+                margin: 0 5px;
+                border-radius: 5px;
+                transition: 0.5s ease;
+            }
+            
+            .lista-elemento .contenedor-entradas-hijos button:hover {
+                cursor: pointer;
+                background-color: #C0392B;
+                color: #fff;
             }
         `;
     }

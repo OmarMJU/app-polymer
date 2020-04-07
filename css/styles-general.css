@@ -12,6 +12,10 @@ font-family: 'Abel', sans-serif;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #1565C0;
+}
+
 .titulo-container {
     display: flex;
     justify-content: center;
