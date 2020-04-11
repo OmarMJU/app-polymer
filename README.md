@@ -78,10 +78,10 @@ La aplicacción es una lista de tareas o lista de pendientes; se escribe una tar
 
 Agregando items
 
-![Items por hacer](https://1drv.ms/u/s!Apnm67lff4jWgnnub_MQPJ_WiVCc?e=KjRMl4)
+![Items por hacer](https://onedrive.live.com/?cid=D6887F5FB9EBE699&id=D6887F5FB9EBE699%21377&parId=D6887F5FB9EBE699%21376&o=OneUp)
 
 Eliminando items
 
-![Items realizados](https://1drv.ms/u/s!Apnm67lff4jWgnr5uz47bUpMt3Ob?e=GUQWhd)
+![Items realizados](https://onedrive.live.com/?cid=D6887F5FB9EBE699&id=D6887F5FB9EBE699%21378&parId=D6887F5FB9EBE699%21376&o=OneUp)
 
 Made with :blue_heart: by OMJU
