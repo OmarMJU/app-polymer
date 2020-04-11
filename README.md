@@ -62,7 +62,7 @@ Para JQuety y Pooper.
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-## Correr el proyecto.
+## Correr el proyecto
 
 Para crear el proyecto es necesario ejecutar el siguiente comando en la ruta en dónde se descargó el proyecto.
 
@@ -71,3 +71,7 @@ $ polymer server
 ```
 
 Esto va a levantar un servidor y sobre este correrá la aplicación. La URL la cual lanza en terminal será la que hay que copiar en el navegador para ver la aplicacción.
+
+## Descripción de la aplicación
+
+La aplicacción es una lista de tareas o lista de pendientes; se escribe una tarea pendiente, se agrega el item a la lista y ésta podrá verse mientras esté pendiente. Se podrá marcar como completada (palomear) cuando el usuario lo indique y la tarea también se podrá eliminar.
