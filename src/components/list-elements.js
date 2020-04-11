@@ -1,4 +1,4 @@
-import {LitElement, html} from "lit-element";
+import {LitElement, html, css} from "lit-element";
 import "./todo-elemento";
 
 class ListaElementos extends LitElement  {
@@ -9,6 +9,18 @@ class ListaElementos extends LitElement  {
         return {
             todoList: { type: Array }
         }
+    }
+
+    /**
+     * Se agregam estilos.
+     */
+    static get styles() {
+        return css`
+            .contenedor-lista {
+                display: flex;
+                justify-content: center;
+            }
+        `;
     }
 
     /**
@@ -24,7 +36,9 @@ class ListaElementos extends LitElement  {
      */
     render() {
         return html`
-        <ul>${this.todoList.map(hijo => html`<todo-elemento elemento="${JSON.stringify(hijo)}"></todo-elemento>`)}</ul>
+        <div class="contenedor-lista">
+            <ul>${this.todoList.map(hijo => html`<todo-elemento elemento="${JSON.stringify(hijo)}"></todo-elemento>`)}</ul>
+        </div>
         `
     }
 }

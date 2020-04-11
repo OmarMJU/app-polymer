@@ -1,0 +1,36 @@
+/* 
+referencias a los estilos importados.
+font-family: 'Baloo Thambi 2', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Gotu', sans-serif;
+font-family: 'Abel', sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1565C0;
+}
+
+.titulo-container {
+    display: flex;
+    justify-content: center;
+    /* background-color: #3498DB; */
+    background-color: #50A8E3;
+}
+
+h1 {
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: #ffffff;
+}
+
+.lit-container {
+    margin: 10px;
+    padding: 10px;
+}

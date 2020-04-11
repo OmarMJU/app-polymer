@@ -1,4 +1,4 @@
-import {LitElement, html} from "lit-element";
+import {LitElement, html, css} from "lit-element";
 import "./item-element"
 import "./list-elements"
 
@@ -14,6 +14,26 @@ class AppPolymer extends LitElement {
         return {
             todoList: { type: Array }
         }
+    }
+
+    /**
+     * Agrega los estilos CSS del elemento.
+     */
+    static get styles() {
+        return css`
+            .contenedor-app {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            item-element {
+                width: 20%;
+            }
+            
+            list-elements {
+                width: 80%;
+            }
+        `;
     }
 
     /**
@@ -59,9 +79,10 @@ class AppPolymer extends LitElement {
      */
     render() {
         return html`
-        <h1>Hola mundo</h1>
-        <item-element></item-element>
-        <list-elements todoList="${JSON.stringify(this.todoList)}"></list-elements>
+        <div class="contenedor-app">
+            <item-element></item-element>
+            <list-elements todoList="${JSON.stringify(this.todoList)}"></list-elements>
+        </div>
         `;
     }
 }

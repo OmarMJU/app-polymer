@@ -1,4 +1,4 @@
-import {LitElement, html} from "lit-element";
+import {LitElement, html, css} from "lit-element";
 
 /**
  * Clase para definir el elemento que tendrá los items
@@ -12,6 +12,45 @@ class TodoElemento extends LitElement {
         return {
             elemento: { type: Object }
         }
+    }
+
+    static get styles() {
+        return css`
+            .lista-elemento {
+                list-style: none;
+                font-family: 'Abel', sans-serif;
+                border: 0;
+                margin: 10px 0;
+                padding: 5px 0;
+                border-radius: 5px;
+                background-color: #fff;
+            }
+            
+            .lista-elemento .contenedor-entradas-hijos {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .lista-elemento .contenedor-entradas-hijos .etiqueta {
+                text-align: center;
+                margin: 0 10px;
+            }
+            
+            .lista-elemento .contenedor-entradas-hijos button {
+                border: 0;
+                background-color: #fff;
+                font-size: 11px;
+                margin: 0 5px;
+                border-radius: 5px;
+                transition: 0.5s ease;
+            }
+            
+            .lista-elemento .contenedor-entradas-hijos button:hover {
+                cursor: pointer;
+                background-color: #C0392B;
+                color: #fff;
+            }
+        `;
     }
 
     /**
@@ -58,10 +97,14 @@ class TodoElemento extends LitElement {
      */
     render() {
         return html`
-        <li>
-            <input type="checkbox" .checked="${this.elemento.bandera}" @click="${() => this.cambBand(this.elemento.id)}" />
-            ${this.elemento.item}
-            <button @click="${() => this.borraElemento(this.elemento.id)}">x</button>
+        <li class="lista-elemento">
+            <div class="contenedor-entradas-hijos custom-control custom-checkbox">
+                <input id="checkEntrada" class="custom-control-input" type="checkbox" .checked="${this.elemento.bandera}" @click="${() => this.cambBand(this.elemento.id)}" />
+                <label class="custom-control-label etiqueta" for="checkEntrada">
+                    ${this.elemento.item}
+                </label>
+                <button @click="${() => this.borraElemento(this.elemento.id)}">x</button>
+            </div>
         </li>
         `;
     }

@@ -1,4 +1,4 @@
-import {LitElement, html} from "lit-element";
+import {LitElement, html, css} from "lit-element";
 
 /**
  * Calse que define el elemento hijo.
@@ -12,6 +12,55 @@ class ItemElement extends LitElement  {
             todoList: { type: Array },
             todoItem: { type: String }
         }
+    }
+
+    /**
+     * Agrega los estilos CSS del elemento.
+     */
+    static get styles() {
+        return css`
+            .contenedor-entrada {
+                background-color: #5EB2EA;
+                border-radius: 5px;
+                padding: 5px;
+                width: 100%;
+            }
+            
+            .container-inputs {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                margin: 20px 0;
+            }
+            
+            .container-inputs * {
+                width: 90%;
+                border: 0;
+            }
+
+            .container-inputs input {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom: 0;
+                padding: 20px 0;
+                font-family: 'Gotu', sans-serif;
+            }
+            
+            .container-inputs button {
+                padding: 10px 0;
+                border-top: 0;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                background-color: #ffffff;
+                color: #5EB2EA;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .container-inputs button:hover {
+                cursor: pointer;
+                color: #2E86C1;
+            }
+        `;
     }
 
     /**
@@ -74,9 +123,11 @@ class ItemElement extends LitElement  {
      */
     render() {
         return html`
-        <div>
-            <input value="${this.todoItem}" @keyup="${(e) => this.presionaTecla(e)}">
-            <button @click="${() => this.presionaBoton()}">Agrega Item</button>
+        <div class="contenedor-entrada">
+            <div class="container-inputs">
+                <input value="${this.todoItem}" @keyup="${(e) => this.presionaTecla(e)}">
+                <button @click="${() => this.presionaBoton()}">Agrega Item</button>
+            </div>
         </div>
         `
     }
