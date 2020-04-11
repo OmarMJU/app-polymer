@@ -75,3 +75,13 @@ Esto va a levantar un servidor y sobre este correrá la aplicación. La URL la c
 ## Descripción de la aplicación
 
 La aplicacción es una lista de tareas o lista de pendientes; se escribe una tarea pendiente, se agrega el item a la lista y ésta podrá verse mientras esté pendiente. Se podrá marcar como completada (palomear) cuando el usuario lo indique y la tarea también se podrá eliminar.
+
+Agregando items
+
+![Items por hacer](https://1drv.ms/u/s!Apnm67lff4jWgnnub_MQPJ_WiVCc?e=KjRMl4)
+
+Eliminando items
+
+![Items realizados](https://1drv.ms/u/s!Apnm67lff4jWgnr5uz47bUpMt3Ob?e=GUQWhd)
+
+Made with :blue_heart: by OMJU
